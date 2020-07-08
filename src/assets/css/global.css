@@ -10,3 +10,6 @@ body,
 .el-breadcrumb {
 	margin-bottom: 10px;
 }
+.el-cascader-panel {
+	height: 150px;
+}
