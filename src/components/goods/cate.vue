@@ -124,6 +124,7 @@ export default {
 			parentCateList:[],
 			selectedKeys:[],
 			cascaderProps:{
+				expandTrigger: 'hover',
 				value: 'cat_id',
 				label: 'cat_name',
 				children: 'children'
@@ -180,7 +181,7 @@ export default {
 			this.$refs.addCateFormRef.validate(async valid => {
 				if(!valid) return
 				const {data: res} = await this.$http.post('categories', this.addCateForm)
-				if(res.meta.status !== 201) this.$message.error('添加分类失败')
+				if(res.meta.status !== 201) return this.$message.error('添加分类失败')
 				this.$message.success('添加分类成功')
 				this.getCateList()
 				this.addCateDialogVisible = false
@@ -193,7 +194,7 @@ export default {
 				cancelButtonText: '取消',
 				type: 'warning'
 			}).catch(err => err)
-			if(confirmResult !== "confirm") this.$message.info('已取消删除')
+			if(confirmResult !== "confirm") return this.$message.info('已取消删除')
 			const {data: res} = await this.$http.delete(`categories/${id}`)
 			if(res.meta.status !== 200) return this.$message.error('删除分类失败')
 			this.$message.success('删除分类成功')
