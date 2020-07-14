@@ -7,9 +7,21 @@ body,
 	margin: 0;
 	min-width: 1366px;
 }
-.el-breadcrumb {
+.el-breadcrumb{
 	margin-bottom: 10px;
 }
-.el-cascader-panel {
-	height: 150px;
+.el-step__title{
+	font-size: 13px;
+}
+.el-tabs--left .el-tabs__nav-wrap.is-left.is-scrollable{
+	padding: 0;
+}
+.el-cascader-panel{
+	height: 200px;
+}
+.el-checkbox__label{
+	font-size: 13px;
+}
+.ql-editor{
+	min-height: 300px;
 }
